@@ -1,0 +1,67 @@
+{
+  "name": "__MSG_appName__",
+  "short_name": "pancake.vn",
+  "version": "0.0.24",
+  "manifest_version": 2,
+  "description": "__MSG_appDescription__",
+  "icons": {
+    "128": "images/icon-128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "bower_components/lodash/dist/lodash.min.js",
+      "scripts/chromereload.js",
+      "lib/jquery.min.js",
+      "scripts/ctx.js",
+      "scripts/photo_upload.js",
+      "scripts/photo_upload_business.js",
+      "scripts/inbox.js",
+      "scripts/inbox_business.js",
+      "scripts/comment.js",
+      "scripts/comment_business.js",
+      "scripts/mentions.js",
+      "scripts/listen.js",
+      "scripts/background.js"
+    ]
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "webRequest",
+    "webRequestBlocking",
+    "management",
+    "https://m.facebook.com/",
+    "https://p-upload.facebook.com/",
+    "http://localhost:9000/",
+    "http://pancake.vn/",
+    "http://local.docker:4000/",
+    "http://shack.hemlock.vn/",
+    "https://0-edge-chat.facebook.com/",
+    "https://business.facebook.com/",
+    "https://upload.facebook.com/"
+  ],
+  "page_action": {
+    "default_icon": "images/icon-38.png",
+    "default_title": "meronpan",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost:9000/*",
+        "http://local.docker:4000/*",
+        "http://pancake.vn/*",
+        "http://shack.hemlock.vn/*"
+      ],
+      "js": [
+        "scripts/contentscript.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    "meronpan.html"
+  ]
+}

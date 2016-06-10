@@ -1,0 +1,13 @@
+{
+  "name": "meronpan",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "babel": "*",
+    "lodash": "^4.7.0"
+  },
+  "devDependencies": {
+    "chai": "~3.4.2",
+    "mocha": "~2.3.4"
+  }
+}
